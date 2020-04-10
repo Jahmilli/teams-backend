@@ -1,0 +1,4 @@
+spring:
+  data:
+    mongodb:
+      uri: "Example Mongo Uri Goes Here"
