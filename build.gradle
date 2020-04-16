@@ -23,6 +23,7 @@ repositories {
 }
 
 dependencies {
+	implementation 'com.google.firebase:firebase-admin:6.12.2'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'
@@ -36,3 +37,5 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
+
+
