@@ -40,7 +40,6 @@
   ],
   "placementConstraints": [],
   "taskRoleArn": null,
-  "compatibilities": ["EC2", "FARGATE"],
   "family": "nonprod-teams-backend",
   "requiresCompatibilities": ["FARGATE"],
   "networkMode": "awsvpc",

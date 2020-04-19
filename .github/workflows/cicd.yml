@@ -108,6 +108,6 @@ jobs:
         with:
           # task-definition: ${{ steps.task-def.outputs.task-definition }}
           task-definition: aws/teams-backend.td.json
-          service: nonprod-teams-backend
+          service: nonprod-teams
           cluster: nonprod-teams
           wait-for-service-stability: true
