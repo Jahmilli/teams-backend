@@ -1,6 +1,6 @@
 on:
   push:
-    branches: [master, test-cicd]
+    branches: [master]
   pull_request:
     branches: [master]
 
