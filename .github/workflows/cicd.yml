@@ -101,10 +101,10 @@ jobs:
 
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
-        env:
-          ENVIRONMENT: nonprod # This should be dynamic based on branch but as we only have 1 environment this is fine :)
+        # env:
+        #   ENVIRONMENT: nonprod # This should be dynamic based on branch but as we only have 1 environment this is fine :)
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
-          service: ${{ ENVIRONMENT }}-teams-backend
-          cluster: ${{ ENVIRONMENT }}-teams
+          service: nonprod-teams-backend
+          cluster: nonprod-teams
           wait-for-service-stability: true
