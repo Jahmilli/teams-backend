@@ -92,20 +92,22 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-southeast-2
-      - name: Fill in the new image ID in the Amazon ECS task definition
-        id: task-def
-        uses: aws-actions/amazon-ecs-render-task-definition@v1
-        with:
-          task-definition: aws/teams-backend.td.json
-          container-name: teams-backend
-          image: ${{ steps.build-image.outputs.image }}
+      # TODO: Use a git commit or version when building image, upload the version as an artefact, pull it here and thats what the image should be used as here...
+      # - name: Fill in the new image ID in the Amazon ECS task definition
+      #   id: task-def
+      #   uses: aws-actions/amazon-ecs-render-task-definition@v1
+      #   with:
+      #     task-definition: aws/teams-backend.td.json
+      #     container-name: teams-backend
+      #     image: ${{ steps.build-image.outputs.image }}
 
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         # env:
         #   ENVIRONMENT: nonprod # This should be dynamic based on branch but as we only have 1 environment this is fine :)
         with:
-          task-definition: ${{ steps.task-def.outputs.task-definition }}
+          # task-definition: ${{ steps.task-def.outputs.task-definition }}
+          task-definition: aws/teams-backend.td.json
           service: nonprod-teams-backend
           cluster: nonprod-teams
           wait-for-service-stability: true
