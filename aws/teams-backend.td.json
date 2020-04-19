@@ -31,8 +31,8 @@
           "CMD-SHELL",
           "curl -f http://localhost:8080/teams/actuator/health || exit 1"
         ],
-        "startPeriod": 60,
-        "interval": 30,
+        "startPeriod": 30,
+        "interval": 20,
         "timeout": 5,
         "retries": 10
       }
