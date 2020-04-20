@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class Application {
+  //You need to point the credentials to the security JSON file.
   final static String googleCredentialsPath = "/mnt/c/ses2b-group2-firebase-adminsdk-kpcwh-3e4df0559c.json";
 
   public static void main(String[] args) {

@@ -29,7 +29,7 @@ public class TestController {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     
     //You can reference an already existing reference
-    DatabaseReference usersRef = datanase.getReference("users/This is an example of saving a string in a database");
+    DatabaseReference usersRef = database.getReference("users/This is an example of saving a string in a database");
 
     //Generate a random number
     Random r = new Random();
